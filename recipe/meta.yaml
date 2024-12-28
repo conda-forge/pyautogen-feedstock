@@ -10,44 +10,47 @@ source:
   sha256: d1f6ef2ab3df63fc0a12d5130a7c9a1de6af20d0c8d173622a648b29769afe06
 
 build:
-  noarch: python
+  skip: true  # [py>=314 or py2k]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8,<3.13
+    - python
     - setuptools
     - pip
   run:
-    - asyncer >=0.0.8
-    - websockets >=14,<15
-    - python >=3.8,<3.13
+    - python
     - openai >=1.57
     - diskcache
     - termcolor
     - flaml
-    - numpy >=1.17.0,<2
+    - numpy >=2.1  # [py>=313]
     - python-dotenv
     - tiktoken
     - pydantic >=1.10,<3,!=2.6.0
     - docker-py
     - packaging
+    - websockets >=14,<15
+    - asyncer >=0.0.8
 
 test:
   imports:
     - autogen
-  # commands:
-  #   - pip check
-  # requires:
-  #   - pip
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
-  home: https://github.com/microsoft/autogen
-  summary: Enabling Next-Gen LLM Applications via Multi-Agent Conversation Framework
-  license: MIT
-  license_file: LICENSE
+  home: https://github.com/ag2ai/ag2
+  summary: A programming framework for agentic AI
+  license: Apache-2.0
+  license_file:
+    - NOTICE.md
+    - LICENSE
 
 extra:
   recipe-maintainers:
     - jan-janssen
+    - raybellwaves
