@@ -10,29 +10,29 @@ source:
   sha256: d1f6ef2ab3df63fc0a12d5130a7c9a1de6af20d0c8d173622a648b29769afe06
 
 build:
-  skip: true  # [py>=314 or py2k]
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 1
 
 requirements:
   host:
-    - python
+    - python >=3.8,<3.13
     - setuptools
     - pip
   run:
-    - python
+    - asyncer >=0.0.8
+    - websockets >=14,<15
+    - python >=3.8,<3.13
     - openai >=1.57
     - diskcache
     - termcolor
     - flaml
-    - numpy >=2.1  # [py>=313]
+    - numpy >=1.17.0,<2
     - python-dotenv
     - tiktoken
     - pydantic >=1.10,<3,!=2.6.0
     - docker-py
     - packaging
-    - websockets >=14,<15
-    - asyncer >=0.0.8
 
 test:
   imports:
