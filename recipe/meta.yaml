@@ -12,17 +12,17 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8,<3.13
+    - python {{ python_min }}
     - setuptools
     - pip
   run:
     - asyncer >=0.0.8
     - websockets >=14,<15
-    - python >=3.8,<3.13
+    - python >={{ python_min }},<3.13
     - openai >=1.57
     - diskcache
     - termcolor
@@ -37,10 +37,11 @@ requirements:
 test:
   imports:
     - autogen
-  # commands:
-  #   - pip check
-  # requires:
-  #   - pip
+  commands:
+    - pip check
+  requires:
+    - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/microsoft/autogen
