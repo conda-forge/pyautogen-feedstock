@@ -1,5 +1,5 @@
 {% set name = "pyautogen" %}
-{% set version = "0.6.0" %}
+{% set version = "0.6.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyautogen-{{ version }}.tar.gz
-  sha256: d1f6ef2ab3df63fc0a12d5130a7c9a1de6af20d0c8d173622a648b29769afe06
+  sha256: 4256db19558639e7a28bdc72a56d7c88df1c3b158229b31e31222c721bab2b0f
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -23,11 +23,11 @@ requirements:
     - asyncer >=0.0.8
     - websockets >=14,<15
     - python >={{ python_min }},<3.13
-    - openai >=1.57
+    - openai >=1.58
     - diskcache
     - termcolor
     - flaml
-    - numpy >=1.17.0,<2
+    - numpy >=1.24.0,<2.0.0
     - python-dotenv
     - tiktoken
     - pydantic >=1.10,<3,!=2.6.0
