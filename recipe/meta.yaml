@@ -1,5 +1,5 @@
 {% set name = "pyautogen" %}
-{% set version = "0.6.1" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyautogen-{{ version }}.tar.gz
-  sha256: 4256db19558639e7a28bdc72a56d7c88df1c3b158229b31e31222c721bab2b0f
+  sha256: 38bd96d0984910a4bda05a444452e525137ec1e43060c938a588fe10f3860f51
 
 build:
   noarch: python
@@ -17,10 +17,11 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - setuptools
+    - hatchling
     - pip
   run:
-    - asyncer >=0.0.8
+    - fast-depends >=2.4.12,<3
+    - asyncer ==0.0.8
     - websockets >=14,<15
     - python >={{ python_min }},<3.13
     - openai >=1.58
