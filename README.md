@@ -3,11 +3,11 @@ About pyautogen-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyautogen-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/microsoft/autogen
+Home: https://github.com/ag2ai/ag2
 
-Package license: MIT
+Package license: Apache-2.0
 
-Summary: Enabling Next-Gen LLM Applications via Multi-Agent Conversation Framework
+Summary: A programming framework for agentic AI
 
 Current build status
 ====================
