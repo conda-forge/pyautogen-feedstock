@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -45,10 +45,12 @@ test:
     - python {{ python_min }}
 
 about:
-  home: https://github.com/microsoft/autogen
-  summary: Enabling Next-Gen LLM Applications via Multi-Agent Conversation Framework
-  license: MIT
-  license_file: LICENSE
+  home: https://github.com/ag2ai/ag2
+  summary: A programming framework for agentic AI
+  license: Apache-2.0
+  license_file:
+    - NOTICE.md
+    - LICENSE
 
 extra:
   recipe-maintainers:
