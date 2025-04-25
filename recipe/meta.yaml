@@ -1,5 +1,5 @@
 {% set name = "pyautogen" %}
-{% set version = "0.8.7" %}
+{% set version = "0.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyautogen-{{ version }}.tar.gz
-  sha256: 190f86d5fd03b7208a4f54464fad4c2cf5c63d42c1b735c3d7eb7291437e64fb
+  sha256: 58763009b6f6f988cdf9bb908c56a61a60c16e772096ab621edf06748fa58e50
 
 build:
   noarch: python
