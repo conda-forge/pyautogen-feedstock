@@ -1,4 +1,4 @@
-{% set name = "pyautogen" %}
+{% set name = "ag2" %}
 {% set version = "0.9" %}
 
 package:
@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyautogen-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ag2-{{ version }}.tar.gz
   sha256: 58763009b6f6f988cdf9bb908c56a61a60c16e772096ab621edf06748fa58e50
 
 build:
