@@ -1,5 +1,6 @@
 {% set name = "pyautogen" %}
-{% set version = "0.9" %}
+{% set version = "0.10.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyautogen-{{ version }}.tar.gz
-  sha256: 58763009b6f6f988cdf9bb908c56a61a60c16e772096ab621edf06748fa58e50
+  sha256: ed42d7d94144d1333cc5727d904bf1c7a8deb8337b185adba332086997e4d682
 
 build:
   noarch: python
@@ -20,6 +21,7 @@ requirements:
     - hatchling
     - pip
   run:
+    - autogen-agentchat >=0.6.4
     - anyio >=3.0.0,<5.0.0
     - httpx >=0.28.1,<1
     - fast-depends >=2.4.12,<3
@@ -39,7 +41,7 @@ requirements:
 
 test:
   imports:
-    - autogen
+    - pyautogen
   commands:
     - pip check
   requires:
@@ -50,9 +52,7 @@ about:
   home: https://github.com/ag2ai/ag2
   summary: A programming framework for agentic AI
   license: Apache-2.0
-  license_file:
-    - NOTICE.md
-    - LICENSE
+  license_file: LICENSE-CODE
 
 extra:
   recipe-maintainers:
