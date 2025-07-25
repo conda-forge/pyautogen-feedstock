@@ -52,9 +52,7 @@ about:
   home: https://github.com/ag2ai/ag2
   summary: A programming framework for agentic AI
   license: Apache-2.0
-  license_file:
-    - NOTICE.md
-    - LICENSE
+  license_file: LICENSE-CODE
 
 extra:
   recipe-maintainers:
