@@ -41,7 +41,7 @@ requirements:
 
 test:
   imports:
-    - autogen
+    - pyautogen
   commands:
     - pip check
   requires:
